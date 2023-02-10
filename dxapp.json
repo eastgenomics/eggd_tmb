@@ -18,7 +18,7 @@
       "label": "Query VEP annotated .vcf file",
       "help": "Uncompressed vcf file with VEP annotation",
       "optional": false,
-      "class": "array:file(s)",
+      "class": "file",
       "patterns": ["*.vcf"]
     },
     {
