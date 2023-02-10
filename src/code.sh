@@ -10,7 +10,8 @@
 set -e -x -o pipefail
 
 #Install dependencies from assets
-
+sudo dpkg -i libtinfo5_6.2-0ubuntu2_amd64.deb
+sudo dpkg -i libncurses5_6.2-0ubuntu2_amd64.deb
 # Download inputs from DNAnexus in parallel, to go into /home/dnanexus/in/
 echo "download_inputs"
 dx-download-all-inputs --parallel
