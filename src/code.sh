@@ -3,15 +3,14 @@
 # Runs vcf2maf.pl to produce individual MAF files with all mutation
 # annotation. The app runs without VEP configurations using the
 # --inhibit-vep argument since input files should be annotated with
-# eggd_vep prior to using the app.
+# eggd_vep prior to using the app. Samtools and tabix are required.
 
 
 # -e = exit on error; -x = output each line that is executed to log; -o pipefail = throw an error if there's an error in pipeline
 set -e -x -o pipefail
 
-#Install dependencies from assets
-sudo dpkg -i libtinfo5_6.2-0ubuntu2_amd64.deb
-sudo dpkg -i libncurses5_6.2-0ubuntu2_amd64.deb
+export BCFTOOLS_PLUGINS=/usr/local/libexec/samtools/
+export TABIX=/usr/local/libexec/tabix/
 # Download inputs from DNAnexus in parallel, to go into /home/dnanexus/in/
 echo "download_inputs"
 dx-download-all-inputs --parallel
