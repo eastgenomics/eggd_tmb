@@ -1,0 +1,82 @@
+{
+  "name": "eggd_vcf2maf",
+  "summary": "Uses uncompressed VEP annnotated VCFs and converts into mutational annotation format file (MAF)",
+  "properties": {
+    "github release": "v1.0.0"
+  },
+    "version": "1.0.0",
+  "authorizedUsers": [
+    "org-emee_1"
+  ],
+    "developers":[
+    "org-emee_1"
+  ],
+   "dxapi": "1.0.0",
+  "inputSpec": [
+    {
+      "name": "input_vcf",
+      "label": "Query VEP annotated .vcf file",
+      "help": "Uncompressed vcf file with VEP annotation",
+      "optional": false,
+      "class": "array:file(s)",
+      "patterns": ["*.vcf"]
+    },
+    {
+      "name": "ref_fasta",
+      "label": "FASTA file",
+      "help": "Uncompressed FASTA file of reference genome",
+      "optional": false,
+      "class": "file",
+      "patterns": ["*.fa"]
+    },
+    {
+      "name": "output_maf",
+      "label": "output prefix",
+      "help": "prefix for output MAF file",
+      "class": "string",
+      "optional": false
+    }
+],
+ "outputSpec": [
+    {
+      "name": "MAF_file",
+      "label": "Tab delimited file with aggregated mutational information from a sample vcf",
+      "class": "array:file"
+    }
+],
+ "runSpec": {
+    "systemRequirements": {
+      "*": {
+        "instanceType": "mem1_ssd1_v2_x2"
+      }
+    },
+    "timeoutPolicy": {
+      "*": {
+        "minutes": 30
+      }
+    },
+    "file": "src/code.sh",
+    "release": "20.04",
+    "version": "0",
+    "interpreter": "bash",
+    "distribution": "Ubuntu",
+    "assetDepends": [
+      {
+        "name": "samtools",
+        "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+        "folder": "/app_assets/htslib/htslib_v1.14.0/build/resources/usr/local/bin"
+      },
+      {
+        "name": "tabix",
+        "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
+        "folder": "/app_assets/htslib/htslib_v1.14.0/build/resources/usr/local/bin"
+      }
+    ]
+  },
+  "access": {
+    "allProjects": "VIEW",
+    "network": [
+      "*"
+    ]
+  }
+}
