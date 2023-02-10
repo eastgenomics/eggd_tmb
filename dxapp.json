@@ -62,14 +62,9 @@
     "distribution": "Ubuntu",
     "assetDepends": [
       {
-        "name": "samtools",
+        "name": "htslib",
         "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
-        "folder": "/app_assets/htslib/htslib_v1.14.0/build/resources/usr/local/bin"
-      },
-      {
-        "name": "tabix",
-        "project": "project-Fkb6Gkj433GVVvj73J7x8KbV",
-        "folder": "/app_assets/htslib/htslib_v1.14.0/build/resources/usr/local/bin"
+        "folder": "/app_assets/htslib/htslib_v1.15.0"
       }
     ]
   },
