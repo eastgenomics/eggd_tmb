@@ -1,1 +1,1 @@
-# eggd_tmb_workflow
+# eggd_vcf2maf
